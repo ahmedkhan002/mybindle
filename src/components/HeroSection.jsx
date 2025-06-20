@@ -8,7 +8,7 @@ const HeroSection = () => {
     <section id='hero' className='bg-[#FF5349] text-white min-h-[550px]  lg:max-h-[550px] max-md:h-[850px] max-lg:max-h-[900px] max-md:gap-8 py-10'>
       <div className='flex flex-row justify-center max-lg:flex-col max-lg:gap-10'>
         <div className='w-full select-none lg:max-h-[420px] flex flex-col  max-lg:gap-10 gap-5 lg:pl-20 py-5 lg:pr-2 max-lg:justify-center max-lg:items-center '>
-          <div className='flex flex-col max-sm:text-4xl max-md:text-5xl max-xs:text-4xl text-6xl font-bold flex-nowrap max-lg:leading-15 items-start max-lg:items-center'>
+          <div className='flex flex-col max-sm:text-4xl max-md:text-5xl text-6xl font-bold flex-nowrap max-sm:leading-12 max-lg:leading-15 items-start max-lg:items-center'>
             <h1 className='flex flex-nowrap '>Stay Connected</h1>
             <h1 className=' opacity-80'>Stay Social</h1>
             <h1 className='opacity-50'>Stay You!</h1>
