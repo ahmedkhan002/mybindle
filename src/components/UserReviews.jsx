@@ -96,13 +96,13 @@ const UserReviews = () => {
               maskImage: 'linear-gradient(to bottom, black 80%, transparent)',
               WebkitMaskImage: 'linear-gradient(to bottom, black 80%, transparent)',
             } : {} }
-              className={`flex flex-row flex-wrap gap-5 justify-center ${SeeMore ? 'h-[1550px]' : 'max-h-[600px]'} overflow-hidden m-2`}>
+              className={`flex flex-row flex-wrap gap-5 justify-center ${SeeMore ? 'h-max pb-20' : 'max-h-[600px]'} overflow-hidden m-2`}>
               {CardsData.map((item, i) => (
                 <div key={i}
-                  class="max-w-sm h-max w-full bg-gradient-to-br text-black rounded-2xl shadow-2xl overflow-hidden transform hover:scale-105 transition-transform duration-300">
-                  <div class="p-6 sm:p-8">
-                    <div class="flex justify-between items-center mb-4">
-                      <div class="flex items-center space-x-2">
+                  className="max-w-sm h-max w-full bg-gradient-to-br text-black rounded-2xl shadow-2xl overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                  <div className="p-6 sm:p-8">
+                    <div className="flex justify-between items-center mb-4">
+                      <div className="flex items-center space-x-2">
                         {[...Array(5)].map((_, i) => (
                           <svg
                             key={i}
@@ -117,14 +117,14 @@ const UserReviews = () => {
 
                       </div>
                     </div>
-                    <blockquote class=" text-xl font-medium mb-6">
+                    <blockquote className=" text-xl font-medium mb-6">
                       {item.discription}
                     </blockquote>
-                    <div class="flex items-center space-x-4">
-                      <img src={item.image} alt="404" class="w-12 h-12 rounded-full border-2 border-white" />
+                    <div className="flex items-center space-x-4">
+                      <img src={item.image} alt="404" className="w-12 h-12 rounded-full border-2 border-white" />
                       <div>
-                        <p class=" font-semibold">{item.name}</p>
-                        <p class=" text-sm">{item.location}</p>
+                        <p className=" font-semibold">{item.name}</p>
+                        <p className=" text-sm">{item.location}</p>
                       </div>
                     </div>
                   </div>
@@ -133,7 +133,7 @@ const UserReviews = () => {
             </div>
             {!SeeMore && ( 
             <div
-              onClick={() => SetSeeMore(true)}
+              onClick={() =>{ SetSeeMore(true) , setHovered(false)}}
               onMouseEnter={() => setHovered(true)}
               onMouseLeave={() => setHovered(false)}
               className="relative h-xl px-8 py-4 cursor-pointer border-2 max-w-max text-red-500 text-2xl shadow-2xl mx-auto rounded-xl overflow-hidden"
@@ -154,7 +154,7 @@ const UserReviews = () => {
             )}
             {SeeMore && (
               <div 
-              onClick={() => SetSeeMore(false)}
+              onClick={() => {SetSeeMore(false), setHovered(false)}}
               onMouseEnter={() => setHovered(true)}
               onMouseLeave={() => setHovered(false)}
               className="relative h-xl px-8 py-4 cursor-pointer border-2 max-w-max text-red-500 text-2xl shadow-2xl mx-auto rounded-xl overflow-hidden"

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import image1 from '../images/footer/image1.png'
 import image2 from '../images/footer/image2.png'
+import apple from '../images/footer/apple.png'
+import playstore from '../images/footer/googleplay.png'
 
 const Footer = () => {
   const [Cwidth, setCwidth] = useState(false);
@@ -8,7 +10,6 @@ const Footer = () => {
   useEffect(() => {
     const checkScreen = () => {
       const width = window.innerWidth;
-      console.log('Current width:', width);
       setCwidth(width <= 1180);
     };
 
@@ -20,10 +21,10 @@ const Footer = () => {
   return (
     <section
       id="donate"
-      className={`bg-[#FF5349] relative z-20 overflow-hidden text-white rounded-t-3xl mt-40 mx-5 max-sm:h-max ${Cwidth ? 'py-10 pt-0 mx-10 h-[400px]' : 'lg:h-[450px]'
+      className={`bg-[#FF5349] relative z-20 max-sm:mx-0 overflow-hidden text-white rounded-t-3xl mt-40 mx-5 max-sm:h-max ${Cwidth ? 'py-10 pt-0 mx-10 h-[400px]' : 'lg:h-[450px]'
         } `}
     >
-      <div className={`mx-10 lg:ml-20 mt-10 flex ${Cwidth ? 'flex-col gap-5' : 'flex-row'}`}>
+      <div className={`mx-5 lg:ml-20 mt-10 flex ${Cwidth ? 'flex-col gap-5' : 'flex-row'}`}>
         <div
           className={`flex relative z-40 overflow-visible flex-col gap-8 w-[65%] ${Cwidth ? 'text-center justify-center w-full items-center' : ''
             }`}
@@ -38,12 +39,27 @@ const Footer = () => {
             Your Social Network, Your Way
             Download MyBindle Now and Be a Part of a Community That’s Always Evolving!
           </p>
-          <button
-            className={`bg-white w-max text-xl px-5 py-2 rounded-lg font-semibold cursor-pointer duration-150 hover:scale-105 ease-in hover:border-2 hover:text-white hover:bg-[#ff5349] text-[#ff5349] ${Cwidth ? 'mx-auto' : ''
-              }`}
-          >
-            Donate Now
-          </button>
+          <div className='flex flex-wrap max-lg:justify-center gap-5'>
+          <div className='flex flex-row group gap-2 justify-center hover:scale-105 cursor-pointer duration-150 py-2 pr-8 px-3 rounded-4xl bg-white max-w-max text-black items-center'>
+            <div className='h-8'>
+              <img className='h-full group-hover:scale-130 duration-150' src={apple} alt="appstore" />
+            </div>
+            <div className='flex flex-col'>
+              <p className='text-[8px] text-slate-700 group-hover:scale-120 duration-150'>DOWNLOAD ON THE</p>
+              <p className='font-semibold text-lg group-hover:scale-110 duration-150'>App Store</p>
+            </div>
+          </div>
+          <div className='flex flex-row group gap-2 justify-center hover:scale-105 duration-150 cursor-pointer h-max py-2 px-5 rounded-4xl bg-white max-w-max text-black items-center'>
+            <div className='h-7'>
+              <img className='h-full group-hover:scale-130 duration-150' src={playstore} alt="appstore" />
+            </div>
+            <div className='flex items-start flex-col'>
+              <p className='text-[8px] text-slate-700 group-hover:scale-130 duration-150 '>GET IT ON</p>
+              <p className='font-semibold text-lg group-hover:scale-110 duration-150 '>Google Play</p>
+            </div>
+          </div>
+          </div>
+        
         </div>
 
         {/* {Cwidth && (

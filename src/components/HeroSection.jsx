@@ -20,7 +20,7 @@ const HeroSection = () => {
             </p>
           </div>
           <div>
-            <button className='bg-white text-xl px-5 py-2 rounded-lg font-semibold cursor-pointer duration-150 hover:scale-105 ease-in hover:border-2 hover:text-white hover:bg-[#ff5349] text-[#ff5349]'>Get Started</button>
+            <button className='bg-white text-xl px-5 py-2 rounded-lg border-2 border-white font-semibold cursor-pointer duration-150 hover:scale-105 ease-in hover:border-2 hover:text-white hover:bg-[#ff5349] text-[#ff5349]'>Get Started</button>
           </div>
         </div>
         <div className='w-full'>

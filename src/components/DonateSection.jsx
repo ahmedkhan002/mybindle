@@ -9,7 +9,6 @@ const DonateSection = () => {
   useEffect(() => {
     const checkScreen = () => {
       const width = window.innerWidth;
-      console.log('Current width:', width);
       setCwidth(width <= 1180);
     };
 
@@ -44,7 +43,7 @@ const DonateSection = () => {
             future. Give today and make a difference!
           </p>
           <button
-            className={`bg-white w-max text-xl px-5 py-2 rounded-lg font-semibold cursor-pointer duration-150 hover:scale-105 ease-in hover:border-2 hover:text-white hover:bg-[#ff5349] text-[#ff5349] ${
+            className={`bg-white w-max text-xl px-5 py-2 rounded-lg font-semibold cursor-pointer border-2 border-white duration-150 hover:scale-105 ease-in hover:border-2 hover:text-white hover:bg-transparent text-[#ff5349] ${
               Cwidth ? 'mx-auto' : ''
             }`}
           >
@@ -57,7 +56,7 @@ const DonateSection = () => {
             <img
               src={heart}
               alt="heart"
-              className="opacity-50 w-[300px] max-w-[60%] h-auto object-contain"
+              className="opacity-45 w-[400px] max-w-[60%] h-auto object-contain"
             />
           </div>
         )}
