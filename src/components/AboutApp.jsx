@@ -3,6 +3,7 @@ import rotateleft from '../images/aboutsection/rotateleft.png'
 import rotateright from '../images/aboutsection/rotateright.png'
 
 const AboutApp = () => {
+  
 
   const CardsData = [
     {
@@ -41,7 +42,7 @@ const AboutApp = () => {
               </p>
               <div className='flex flex-col gap-3'>
                 {CardsData.map((item,i) => (
-                <div key={i} className='flex min-h-40 py-5 cursor-pointer justify-center gap-5 flex-col px-5 duration-200 rounded-2xl border-4 hover:-translate-y-2 hover:-translate-x-2 shadow-[10px_10px_17px_0px_#d1d1d1]'>
+                <div key={i} className='flex min-h-40 py-5 cursor-pointer justify-center gap-5 flex-col max-sm:px-3 px-5 duration-200 rounded-2xl border-4 hover:-translate-y-2 hover:-translate-x-2 shadow-[10px_10px_17px_0px_#d1d1d1]'>
                   <h1 className='text-2xl font-bold text-shadow-lg max-sm:text-center'>{item.title}</h1>
                   <p className='font-semibold max-sm:text-center'>{item.discription}</p>
                 </div>
