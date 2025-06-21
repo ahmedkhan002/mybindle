@@ -8,6 +8,8 @@ import Features from './components/Features'
 import AboutApp from './components/AboutApp'
 import InstallApp from './components/InstallApp'
 import DonateSection from './components/DonateSection'
+import UserReviews from './components/UserReviews'
+import Footer from './components/Footer'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -20,6 +22,8 @@ function App() {
     <AboutApp />
     <InstallApp />
     <DonateSection />
+    <UserReviews />
+    <Footer />
     </>
   )
 }
