@@ -12,22 +12,12 @@ import Footer from './components/Footer';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
-  const [typedText, setTypedText] = useState('');
   const fullText = 'MY BINDLE';
 
   useEffect(() => {
-    let timeout;
-    if (typedText.length < fullText.length) {
-      timeout = setTimeout(() => {
-        setTypedText(fullText.slice(0, typedText.length + 1));
-      }, 200);
-    }
-    return () => clearTimeout(timeout);
-  }, [typedText]);
-
-  useEffect(() => {
     const handleLoad = () => {
-      setTimeout(() => setIsLoading(false), 2000);
+     
+      setTimeout(() => setIsLoading(false), 2500);
     };
 
     if (document.readyState === 'complete') {
@@ -43,8 +33,16 @@ function App() {
       {isLoading ? (
         <div className="h-screen w-screen flex items-center justify-center bg-white z-50 fixed top-0 left-0">
           <h1 className="text-4xl font-bold text-[#ff5349] font-mono tracking-widest">
-            {typedText}
-            <span className="animate-pulse">|</span>
+            {fullText.split('').map((char, index) => (
+              <span
+                key={index}
+                className="inline-block animate-char-reveal"
+                style={{ animationDelay: `${index * 0.08}s` }}
+              >
+                {char}
+              </span>
+            ))}
+            <span className="inline-block animate-dots ml-1">...</span>
           </h1>
         </div>
       ) : (
@@ -59,6 +57,37 @@ function App() {
           <Footer />
         </>
       )}
+      <style>{`@keyframes charReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); 
+  }
+}
+
+.animate-char-reveal {
+  animation: infinite charReveal 1s ease-out forwards; 
+  opacity: 0; 
+}
+
+@keyframes dots {
+  0%, 20% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.animate-dots {
+  animation: dots 1.5s infinite alternate;
+}`}</style>
     </>
   );
 }
