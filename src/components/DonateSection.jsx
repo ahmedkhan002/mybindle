@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import image1 from '../images/donate/image1.png';
 import image2 from '../images/donate/image2.png';
+import heartbg from '../images/donate/heartbg.png'
 import { motion, AnimatePresence } from "framer-motion"; 
 import { Heart } from 'lucide-react'; 
 
@@ -122,7 +123,7 @@ const DonateSection = () => {
 
         {Cwidth && (
           <div className="absolute inset-0 z-10 flex justify-center items-center">
-            <Heart size={400} color="white" fill="white" className="opacity-45 max-w-[60%] h-auto object-contain" />
+            <img src={heartbg} size={400} className="opacity-45 max-w-[60%] h-auto object-contain" />
           </div>
         )}
 
